@@ -61,7 +61,7 @@ const AdminDashboard = () => {
   const pendingRides = rides.filter(ride => !ride.approved);
   const approvedRides = rides.filter(ride => ride.approved);
   
-  const totalUsers = 10;
+  const totalUsers = rides ? rides.length : 0;
   const totalRegistrations = approvedRides.reduce((sum, ride) => sum + ride.registrations, 0);
   const totalRides = approvedRides.length;
 
