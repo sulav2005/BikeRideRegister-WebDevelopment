@@ -19,7 +19,12 @@ const AdminDashboard = () => {
   const [selectedRide, setSelectedRide] = useState(null);
   const [showRidersModal, setShowRidersModal] = useState(false);
   const [rejectionReason, setRejectionReason] = useState('');
-  const [showRejectForm, setShowRejectForm] = useState(null);
+  const [showRejectForm, setShowRejectForm] = useState(false);
+
+  const handleRefresh = () => {
+    // simple refresh to re-render / refetch data (backend endpoints may be added)
+    window.location.reload();
+  };
 
   const handleLogout = () => {
     logout();
@@ -119,6 +124,10 @@ const AdminDashboard = () => {
           <div className="admin-header-info">
             <div className="admin-greeting">
               Welcome, <strong>{currentUser.email}</strong>
+            </div>
+            <div className="admin-controls">
+              <div className="current-date">{new Date().toLocaleDateString()}</div>
+              <button className="btn-refresh" onClick={handleRefresh}>🔄 Refresh</button>
             </div>
           </div>
         </header>
