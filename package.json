@@ -1,0 +1,15 @@
+{
+  "name": "react-project",
+  "version": "1.0.0",
+  "description": "Bike Tours React Application",
+  "private": true,
+  "scripts": {
+    "dev": "cd react-app && npm install && npm run dev",
+    "build": "cd react-app && npm run build",
+    "preview": "cd react-app && npm run preview",
+    "lint": "cd react-app && npm run lint"
+  },
+  "workspaces": [
+    "react-app"
+  ]
+}

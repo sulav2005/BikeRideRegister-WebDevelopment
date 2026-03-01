@@ -1,0 +1,15 @@
+# ignore node_modules everywhere
+node_modules/
+
+# ignore environment files
+.env
+
+# backend specific
+/backend/node_modules/
+/backend/.env
+
+# react app build output
+/react-app/dist/
+
+# macOS
+.DS_Store

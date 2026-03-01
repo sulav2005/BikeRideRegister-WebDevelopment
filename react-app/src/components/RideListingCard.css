@@ -1,0 +1,373 @@
+/* RideListingCard Styling */
+
+.ride-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 2px solid #f0f0f5;
+}
+
+.ride-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+.ride-card.urgent {
+  border-color: #ff6b6b;
+  background: linear-gradient(135deg, #fff5f5 0%, #ffe0e0 100%);
+}
+
+.ride-card.urgent:hover {
+  box-shadow: 0 12px 28px rgba(255, 107, 107, 0.25);
+}
+
+.ride-card-header {
+  padding: 1.5rem;
+  border-bottom: 2px solid #f0f0f5;
+  background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+}
+
+.ride-card.urgent .ride-card-header {
+  background: linear-gradient(135deg, #ffe0e0 0%, #fff5f5 100%);
+  border-bottom-color: #ffb3b3;
+}
+
+.ride-header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.ride-title {
+  margin: 0;
+  color: #1a1a2e;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.4;
+  word-break: break-word;
+  flex: 1;
+}
+
+.badges {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.urgent-badge {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ff5252 100%);
+  color: white;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(255, 107, 107, 0.3);
+  animation: pulse 2s infinite;
+}
+
+.free-badge {
+  background: linear-gradient(135deg, #00c864 0%, #00e87f 100%);
+  color: white;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(0, 200, 100, 0.3);
+}
+
+.all-bikes-badge {
+  background: linear-gradient(135deg, #6c63ff 0%, #5a4fbf 100%);
+  color: white;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(108, 99, 255, 0.3);
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.organizer-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: rgba(0, 123, 255, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  width: fit-content;
+}
+
+.organizer-logo {
+  font-size: 1.2rem;
+}
+
+.organizer-name {
+  color: #0056b3;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.ride-card-body {
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ride-info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem;
+  background-color: rgba(0, 123, 255, 0.03);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.ride-card.urgent .ride-info-row {
+  background-color: rgba(255, 107, 107, 0.05);
+}
+
+.ride-info-row:hover {
+  background-color: rgba(0, 123, 255, 0.08);
+}
+
+.ride-card.urgent .ride-info-row:hover {
+  background-color: rgba(255, 107, 107, 0.1);
+}
+
+.ride-info-label {
+  color: #666;
+  font-weight: 600;
+  font-size: 0.9rem;
+  min-width: 100px;
+}
+
+.ride-info-value {
+  color: #1a1a2e;
+  font-weight: 500;
+  font-size: 0.95rem;
+  text-align: right;
+  flex: 1;
+}
+
+.price-row {
+  background: linear-gradient(135deg, rgba(0, 200, 100, 0.08) 0%, rgba(0, 150, 80, 0.04) 100%);
+  border: 1px solid rgba(0, 200, 100, 0.15);
+}
+
+.price-row.free {
+  background: linear-gradient(135deg, rgba(0, 200, 100, 0.15) 0%, rgba(0, 150, 80, 0.08) 100%);
+  border: 2px solid rgba(0, 200, 100, 0.3);
+}
+
+.ride-price {
+  color: #00c864;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-align: right;
+}
+
+.ride-price.free-price {
+  color: #00c864;
+  font-weight: 800;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+}
+
+.seats-section {
+  margin-top: 0.5rem;
+  padding: 1rem;
+  background: linear-gradient(135deg, rgba(100, 150, 255, 0.08) 0%, rgba(80, 120, 255, 0.04) 100%);
+  border-radius: 8px;
+  border: 1px solid rgba(100, 150, 255, 0.15);
+}
+
+.seats-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.seats-label {
+  color: #666;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.seats-count {
+  color: #0056b3;
+  font-weight: 700;
+  font-size: 1rem;
+  background-color: rgba(0, 123, 255, 0.1);
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+}
+
+.seats-bar {
+  width: 100%;
+  height: 8px;
+  background-color: rgba(0, 123, 255, 0.15);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.seats-filled {
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.3s ease;
+}
+
+.seats-filled.good {
+  background: linear-gradient(90deg, #00c864 0%, #00e87f 100%);
+}
+
+.seats-filled.warning {
+  background: linear-gradient(90deg, #ffb800 0%, #ffc837 100%);
+}
+
+.seats-filled.critical {
+  background: linear-gradient(90deg, #ff6b6b 0%, #ff5252 100%);
+}
+
+.ride-card-footer {
+  padding: 1.5rem;
+  border-top: 2px solid #f0f0f5;
+  background-color: rgba(0, 123, 255, 0.02);
+}
+
+.ride-card.urgent .ride-card-footer {
+  border-top-color: #ffb3b3;
+  background-color: rgba(255, 107, 107, 0.02);
+}
+
+.register-btn {
+  width: 100%;
+  padding: 0.85rem 1.5rem;
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+.ride-card.urgent .register-btn {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ff5252 100%);
+  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+}
+
+.register-btn:hover:not(.disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.4);
+}
+
+.ride-card.urgent .register-btn:hover:not(.disabled) {
+  box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4);
+}
+
+.register-btn:active:not(.disabled) {
+  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.2);
+}
+
+.register-btn.disabled {
+  background: linear-gradient(135deg, #ccc 0%, #999 100%);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Responsive Grid */
+.ride-listing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+@media (max-width: 768px) {
+  .ride-listing-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+
+  .ride-title {
+    font-size: 1.1rem;
+  }
+
+  .ride-info-label {
+    font-size: 0.85rem;
+    min-width: 80px;
+  }
+
+  .ride-info-value {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .ride-listing-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .ride-card {
+    border-radius: 10px;
+  }
+
+  .ride-card-header,
+  .ride-card-body,
+  .ride-card-footer {
+    padding: 1.25rem;
+  }
+
+  .ride-title {
+    font-size: 1rem;
+  }
+
+  .ride-header-top {
+    flex-direction: column;
+  }
+
+  .urgent-badge {
+    align-self: flex-start;
+  }
+
+  .ride-info-row {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .ride-info-label {
+    min-width: auto;
+  }
+
+  .ride-info-value {
+    text-align: left;
+    width: 100%;
+  }
+}

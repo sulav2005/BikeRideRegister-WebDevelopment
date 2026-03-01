@@ -1,0 +1,98 @@
+/* Registered Riders Styling */
+
+.registered-riders {
+  padding: 2rem;
+  background: #f8f9ff;
+  border-radius: 8px;
+  margin: 1rem;
+}
+
+.registered-riders h2 {
+  color: #1a1a2e;
+  margin-bottom: 1.5rem;
+}
+
+.rides-dropdown {
+  margin-bottom: 2rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.rides-dropdown label {
+  font-weight: 600;
+  color: #333;
+}
+
+.rides-dropdown select {
+  padding: 0.5rem 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.rides-dropdown select:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.registrations-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.registrations-table thead {
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+  color: white;
+}
+
+.registrations-table th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+.registrations-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.registrations-table tbody tr:hover {
+  background: #f8f9ff;
+}
+
+.no-registrations {
+  text-align: center;
+  padding: 2rem;
+  color: #999;
+  font-size: 1rem;
+}
+
+.registration-status {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.status-confirmed {
+  background: #d4edda;
+  color: #155724;
+}
+
+.status-pending {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.status-cancelled {
+  background: #f8d7da;
+  color: #721c24;
+}
