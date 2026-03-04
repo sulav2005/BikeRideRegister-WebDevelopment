@@ -1,7 +1,7 @@
 // src/pages/Login.jsx
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import { useRole } from '../context/RoleContext';
 import './Login.css';
@@ -9,6 +9,7 @@ import './Login.css';
 const Login = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const navigate = useNavigate();
+  const location = useLocation();
   const { loginRider } = useRole();
   const [showPassword, setShowPassword] = useState(false);
   const [focusedField, setFocusedField] = useState(null);
@@ -19,7 +20,10 @@ const Login = () => {
     if (riderUser && riderUser.email === data.email && riderUser.password === data.password) {
       loginRider(riderUser);
       alert('Login successful!');
-      navigate('/');
+      // redirect to original destination or home
+      const from = location.state?.from?.pathname || '/';
+      navigate(from);
+
     } else {
       setErrorMessage('Invalid credentials. Please check your email and password.');
     }

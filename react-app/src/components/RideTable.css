@@ -2,10 +2,11 @@
 
 .ride-table-container {
   overflow-x: auto;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
 }
+
 
 .ride-table {
   width: 100%;
@@ -14,7 +15,7 @@
 }
 
 .ride-table thead {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: #374151;
   color: white;
 }
 

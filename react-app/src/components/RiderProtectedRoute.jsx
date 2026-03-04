@@ -1,9 +1,10 @@
 // src/components/RiderProtectedRoute.jsx
-import { Navigate } from 'react-router-dom';
+import { Navigate, useLocation } from 'react-router-dom';
 import { useRole } from '../context/RoleContext';
 
 const RiderProtectedRoute = ({ children }) => {
   const { currentUser, loading } = useRole();
+  const location = useLocation();
 
   if (loading) {
     return (
@@ -13,9 +14,9 @@ const RiderProtectedRoute = ({ children }) => {
     );
   }
 
-  // If not authenticated, redirect to rider login
+  // If not authenticated, redirect to rider login and preserve destination
   if (!currentUser) {
-    return <Navigate to="/login" />;
+    return <Navigate to="/login" state={{ from: location }} replace />;
   }
 
   // If not a rider, show access denied

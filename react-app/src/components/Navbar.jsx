@@ -39,8 +39,8 @@ const Navbar = () => {
         {isAdmin && <li><button onClick={handleLogout} className="admin-logout">Admin Logout</button></li>}
         
         {/* Public Admin/Organizer Access */}
-        {!isAdmin && <li><Link to="/admin/login" className="admin-link">🔐 Admin</Link></li>}
-        {!isOrganizer && !isRider && <li><Link to="/organizer/login" className="organizer-link">🏍️ Organizer</Link></li>}
+        {!isAdmin && <li><Link to="/admin/login" className="admin-link">Admin</Link></li>}
+        {!isOrganizer && !isRider && <li><Link to="/organizer/login" className="organizer-link">Organizer</Link></li>}
       </ul>
     </nav>
   );

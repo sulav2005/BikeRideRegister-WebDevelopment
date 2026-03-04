@@ -1,34 +1,34 @@
-/* src/pages/Login.css */
+/* src/pages/Login.css - Simplified student design */
 .login {
-  max-width: 420px;
+  max-width: 400px;
   margin: 3rem auto;
-  padding: 2.5rem;
-  border: none;
-  border-radius: 12px;
-  background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: #f9fafb;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
 }
 
 .login h2 {
   text-align: center;
-  margin-bottom: 2.5rem;
-  color: #1a1a2e;
-  font-size: 1.8rem;
-  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #374151;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 0;
 }
 
 .error-banner {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  padding: 1rem;
+  padding: 0.75rem 1rem;
   margin-bottom: 1.5rem;
-  background-color: #fff3cd;
-  border: 2px solid #ffc107;
-  border-radius: 8px;
-  color: #856404;
-  font-size: 0.95rem;
-  animation: shake 0.5s ease-in-out;
+  background-color: #fee2e2;
+  border: 1px solid #fecaca;
+  border-radius: 4px;
+  color: #991b1b;
+  font-size: 0.9rem;
 }
 
 @keyframes shake {
@@ -54,81 +54,59 @@
 
 .floating-group {
   position: relative;
-  height: 60px;
+  height: auto;
 }
 
 .floating-group input {
-  position: absolute;
   width: 100%;
-  height: 100%;
-  padding: 0.75rem 1rem;
-  border: 2px solid #e0e0e0;
-  border-radius: 8px;
-  font-size: 1rem;
-  color: #333;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  color: #1f2937;
   background-color: #fff;
   outline: none;
-  transition: all 0.3s ease;
-  padding-top: 1.5rem;
-  padding-bottom: 0.5rem;
+  transition: border-color 0.2s;
 }
 
-.floating-group input:focus,
-.floating-group input:not(:placeholder-shown) {
-  border-color: #007bff;
-  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+.floating-group input:focus {
+  border-color: #2563eb;
 }
 
 .floating-group label {
-  position: absolute;
-  left: 1rem;
-  top: 0.75rem;
-  padding: 0 0.25rem;
-  background-color: white;
-  color: #999;
-  font-size: 1rem;
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #374151;
+  font-size: 0.9rem;
   font-weight: 500;
-  pointer-events: none;
-  transition: all 0.3s ease;
-}
-
-.floating-group input:focus ~ label,
-.floating-group input:not(:placeholder-shown) ~ label {
-  top: -0.75rem;
-  font-size: 0.85rem;
-  color: #007bff;
-  font-weight: 600;
 }
 
 .error {
-  color: #e74c3c;
-  font-size: 0.85rem;
+  color: #dc2626;
+  font-size: 0.8rem;
   margin-top: 0.25rem;
   display: block;
 }
 
 .submit-btn {
-  padding: 0.9rem;
-  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+  padding: 0.75rem;
+  background: #2563eb;
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 4px;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 600;
   margin-top: 0.5rem;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  transition: background 0.2s;
 }
 
 .submit-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
+  background: #1d4ed8;
 }
 
 .submit-btn:active {
-  transform: translateY(0);
+  background: #1e40af;
 }
 
 .password-group {
@@ -137,69 +115,47 @@
 
 .password-input-wrapper {
   position: relative;
-  height: 60px;
 }
 
 .password-input-wrapper input {
-  position: absolute;
   width: 100%;
-  height: 100%;
-  padding: 0.75rem 1rem;
-  padding-top: 1.5rem;
-  padding-bottom: 0.5rem;
-  padding-right: 3rem;
-  border: 2px solid #e0e0e0;
-  border-radius: 8px;
-  font-size: 1rem;
-  color: #333;
+  padding: 0.75rem;
+  padding-right: 2.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  color: #1f2937;
   background-color: #fff;
   outline: none;
-  transition: all 0.3s ease;
+  transition: border-color 0.2s;
 }
 
-.password-input-wrapper input:focus,
-.password-input-wrapper input:not(:placeholder-shown) {
-  border-color: #007bff;
-  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+.password-input-wrapper input:focus {
+  border-color: #2563eb;
 }
 
 .password-group label {
-  position: absolute;
-  left: 1rem;
-  top: 0.75rem;
-  padding: 0 0.25rem;
-  background-color: white;
-  color: #999;
-  font-size: 1rem;
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #374151;
+  font-size: 0.9rem;
   font-weight: 500;
-  pointer-events: none;
-  transition: all 0.3s ease;
-  z-index: 1;
-}
-
-.password-input-wrapper input:focus ~ label,
-.password-input-wrapper input:not(:placeholder-shown) ~ label {
-  top: -0.75rem;
-  font-size: 0.85rem;
-  color: #007bff;
-  font-weight: 600;
 }
 
 .toggle-password {
   position: absolute;
-  right: 1rem;
+  right: 0.75rem;
   top: 50%;
   transform: translateY(-50%);
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 1.3rem;
-  padding: 0.5rem;
+  font-size: 0.95rem;
+  padding: 0.4rem;
   color: #666;
-  transition: all 0.2s ease;
-  z-index: 2;
+  transition: color 0.2s;
 }
 
 .toggle-password:hover {
-  color: #007bff;
+  color: #2563eb;
 }

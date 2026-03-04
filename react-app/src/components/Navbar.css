@@ -51,28 +51,28 @@
 
 /* Admin Link Styling */
 .admin-link {
-  background-color: #667eea;
+  background-color: #1E1E1E;
   color: white !important;
   font-weight: 600;
   transition: all 0.3s ease !important;
 }
 
 .admin-link:hover {
-  background-color: #764ba2 !important;
-  transform: scale(1.05);
+  background-color: #333 !important;
+  transform: none;
 }
 
 /* Organizer Link Styling */
 .organizer-link {
-  background-color: #ff6b6b;
-  color: white !important;
+  background-color: #E0E0E0;
+  color: #333 !important;
   font-weight: 600;
   transition: all 0.3s ease !important;
 }
 
 .organizer-link:hover {
-  background-color: #ffa94d !important;
-  transform: scale(1.05);
+  background-color: #ccc !important;
+  transform: none;
 }
 
 .admin-logout {
