@@ -64,7 +64,7 @@ const Home = () => {
         {/* Upcoming Rides This Month Section */}
         <section className="upcoming-rides-section">
           <div className="section-header">
-            <h2>🚴 Upcoming Rides This Month</h2>
+            <h2>Upcoming Rides This Month</h2>
             <p>Discover exciting approved rides happening in the next 30 days</p>
           </div>
 

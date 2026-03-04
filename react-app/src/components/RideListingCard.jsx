@@ -23,9 +23,9 @@ const RideListingCard = ({ ride, onRegister }) => {
         <div className="ride-header-top">
           <h3 className="ride-title">{ride.title}</h3>
           <div className="badges">
-            {isUrgent && <span className="urgent-badge">⚡ URGENT</span>}
-            {isFreeRide && <span className="free-badge">🎉 Free Ride</span>}
-            {allowsAllBikes && <span className="all-bikes-badge">🏍️ All Bikes</span>}
+            {isUrgent && <span className="urgent-badge">URGENT</span>}
+            {isFreeRide && <span className="free-badge">FREE</span>}
+            {allowsAllBikes && <span className="all-bikes-badge">ALL BIKES</span>}
           </div>
         </div>
         <div className="organizer-badge">
@@ -36,28 +36,28 @@ const RideListingCard = ({ ride, onRegister }) => {
 
       <div className="ride-card-body">
         <div className="ride-info-row">
-          <span className="ride-info-label">📍 Location</span>
+          <span className="ride-info-label">Location</span>
           <span className="ride-info-value">{ride.location}</span>
         </div>
 
         <div className="ride-info-row">
-          <span className="ride-info-label">📅 Date</span>
+          <span className="ride-info-label">Date</span>
           <span className="ride-info-value">{formatDate(ride.date)}</span>
         </div>
 
         <div className="ride-info-row">
-          <span className="ride-info-label">⏱️ Duration</span>
+          <span className="ride-info-label">Duration</span>
           <span className="ride-info-value">{ride.duration}</span>
         </div>
 
         <div className={`ride-info-row price-row ${isFreeRide ? 'free' : ''}`}>
-          <span className="ride-info-label">💰 Price</span>
+          <span className="ride-info-label">Price</span>
           <span className={`ride-price ${isFreeRide ? 'free-price' : ''}`}>{displayPrice}</span>
         </div>
 
         <div className="seats-section">
           <div className="seats-info">
-            <span className="seats-label">🪑 Available Seats</span>
+            <span className="seats-label">Available Seats</span>
             <span className="seats-count">{ride.availableSeats}/{ride.totalSeats}</span>
           </div>
           <div className="seats-bar">
