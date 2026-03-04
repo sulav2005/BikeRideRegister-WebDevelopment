@@ -62,7 +62,7 @@ const OrganizerDashboard = () => {
         <div className="stat-card">
           <div className="stat-content">
             <h4>Total Revenue</h4>
-            <p className="stat-value">₹{approvedRides.reduce((sum, ride) => sum + (ride.price * ride.registrations), 0)}</p>
+            <p className="stat-value">NPR {approvedRides.reduce((sum, ride) => sum + (ride.price * ride.registrations), 0)}</p>
           </div>
         </div>
       </div>
@@ -129,7 +129,7 @@ const OrganizerDashboard = () => {
                     <p><strong>Location:</strong> {ride.location}</p>
                     <p><strong>Date:</strong> {new Date(ride.date).toLocaleDateString()}</p>
                     <p><strong>Duration:</strong> {ride.duration}</p>
-                    <p><strong>Price:</strong> ₹{ride.price}</p>
+                    <p><strong>Price:</strong> NPR {ride.price}</p>
                     <p><strong>Seats:</strong> {ride.totalSeats}</p>
                   </div>
                   <div className="ride-info">
