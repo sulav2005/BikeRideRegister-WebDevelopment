@@ -175,7 +175,7 @@ const AdminDashboard = () => {
                   <div className="stat-icon">💰</div>
                   <div className="stat-info">
                     <h3>Revenue</h3>
-                    <p className="stat-number">₹{approvedRides.reduce((sum, ride) => sum + (ride.price * ride.registrations), 0)}</p>
+                    <p className="stat-number">NPR {approvedRides.reduce((sum, ride) => sum + (ride.price * ride.registrations), 0)}</p>
                   </div>
                 </div>
               </div>
@@ -258,7 +258,7 @@ const AdminDashboard = () => {
                           </div>
                           <div className="ride-info-row">
                             <span className="label">💰 Price:</span>
-                            <span className="value">₹{ride.price}</span>
+                            <span className="value">NPR {ride.price}</span>
                           </div>
                           <div className="ride-info-row">
                             <span className="label">👥 Seats:</span>

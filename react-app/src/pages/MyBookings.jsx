@@ -93,7 +93,7 @@ const MyRegistrations = () => {
 
                       <div className="info-row">
                         <span className="label">💰 Price:</span>
-                        <span className="value price">₹{ride.price}</span>
+                        <span className="value price">NPR {ride.price}</span>
                       </div>
 
                       <div className="info-row">

@@ -46,7 +46,7 @@ const RideTable = ({ onEdit, onViewRiders, isAdmin = false, organizerName = null
                 <td className="ride-title">{ride.title}</td>
                 <td>{ride.location}</td>
                 <td>{new Date(ride.date).toLocaleDateString()}</td>
-                <td>₹{ride.price}</td>
+                <td>NPR {ride.price}</td>
                 <td>
                   <span className="seats-badge">
                     {ride.availableSeats}/{ride.totalSeats}
@@ -55,7 +55,7 @@ const RideTable = ({ onEdit, onViewRiders, isAdmin = false, organizerName = null
                 <td>{ride.registrations}</td>
                 <td>
                   <span className={`status-badge ${ride.status}`}>
-                    {ride.status === 'active' ? '🟢 Active' : '🔴 Closed'}
+                    {ride.status === 'active' ? 'Active' : 'Closed'}
                   </span>
                 </td>
                 <td className="actions-cell">
@@ -64,28 +64,28 @@ const RideTable = ({ onEdit, onViewRiders, isAdmin = false, organizerName = null
                     onClick={() => onEdit(ride)}
                     title="Edit ride"
                   >
-                    ✏️ Edit
+                    Edit
                   </button>
                   <button
                     className="btn-small btn-view"
                     onClick={() => onViewRiders(ride)}
                     title="View registered riders"
                   >
-                    👥 Riders
+                    Riders
                   </button>
                   <button
                     className={`btn-small ${ride.status === 'active' ? 'btn-close' : 'btn-reopen'}`}
                     onClick={() => handleToggleRegistration(ride.id, ride.status)}
                     title={ride.status === 'active' ? 'Close registration' : 'Reopen registration'}
                   >
-                    {ride.status === 'active' ? '🔒 Close' : '🔓 Open'}
+                    {ride.status === 'active' ? 'Close' : 'Open'}
                   </button>
                   <button
                     className="btn-small btn-delete"
                     onClick={() => setDeleteConfirm(ride.id)}
                     title="Delete ride"
                   >
-                    🗑️ Delete
+                    Delete
                   </button>
                   {deleteConfirm === ride.id && (
                     <div className="delete-confirm">
