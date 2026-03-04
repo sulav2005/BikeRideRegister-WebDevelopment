@@ -137,7 +137,7 @@ const RideForm = ({ ride = null, onClose, organizerName }) => {
 
           <div className="form-row">
             <div className="form-group">
-              <label htmlFor="price">Price (₹) *</label>
+              <label htmlFor="price">Price (NPR) *</label>
               <input
                 id="price"
                 type="number"
