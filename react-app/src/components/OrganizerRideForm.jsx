@@ -226,7 +226,7 @@ const OrganizerRideForm = ({ organizerName, onRideCreated }) => {
               <div className="form-group">
                 <label htmlFor="price">💰 Price (NPR) *</label>
                 <div className="input-with-icon">
-                  <span className="currency">₹</span>
+                  <span className="currency">NPR</span>
                   <input
                     type="number"
                     id="price"

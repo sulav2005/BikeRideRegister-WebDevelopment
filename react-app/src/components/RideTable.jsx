@@ -46,7 +46,7 @@ const RideTable = ({ onEdit, onViewRiders, isAdmin = false, organizerName = null
                 <td className="ride-title">{ride.title}</td>
                 <td>{ride.location}</td>
                 <td>{new Date(ride.date).toLocaleDateString()}</td>
-                <td>₹{ride.price}</td>
+                <td>NPR {ride.price}</td>
                 <td>
                   <span className="seats-badge">
                     {ride.availableSeats}/{ride.totalSeats}
