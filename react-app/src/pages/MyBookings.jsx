@@ -68,76 +68,77 @@ const MyRegistrations = () => {
           </div>
 
           {activeTab === 'registrations' ? (
-            <div className="empty-state">
-              <div className="empty-icon">🏍️</div>
-              <h2>No Confirmed Registrations Yet</h2>
-              <p>You haven't registered for any rides yet. Browse available rides and register to join the adventure!</p>
-              <a href="/" className="btn-browse">Browse Rides</a>
-            </div>
-          ) : (
-            <div className="registrations-container">
-              <div className="registrations-count">
-                You have <strong>{myRegistrations.length}</strong> confirmed registration{myRegistrations.length !== 1 ? 's' : ''}
-              </div>
-              
-              <div className="registrations-grid">
-                {myRegistrations.map(ride => (
-                  <div key={ride.id} className="registration-card">
-                    <div className="card-header">
-                      <h3 className="ride-title">{ride.title}</h3>
-                      <span className={`status-badge status-${ride.status}`}>
-                        {ride.status === 'active' ? '🟢 Active' : '🔴 Closed'}
-                      </span>
-                    </div>
-
-                    <div className="card-body">
-                      <div className="info-row">
-                        <span className="label">📍 Location:</span>
-                        <span className="value">{ride.location}</span>
-                      </div>
-
-                      <div className="info-row">
-                        <span className="label">📅 Date:</span>
-                        <span className="value">{formatDate(ride.date)}</span>
-                      </div>
-
-                      <div className="info-row">
-                        <span className="label">🏢 Organizer:</span>
-                        <span className="value">{ride.organizer}</span>
-                      </div>
-
-                      <div className="info-row">
-                        <span className="label">💰 Price:</span>
-                        <span className="value price">NPR {ride.price}</span>
-                      </div>
-
-                      <div className="info-row">
-                        <span className="label">👥 Participants:</span>
-                        <span className="value">{ride.registrations} / {ride.totalSeats}</span>
-                      </div>
-
-                      <div className="info-row">
-                        <span className="label">📊 Status:</span>
-                        <span className="value status-text">
-                          {ride.status === 'active' ? '✅ Registration Open' : '🔒 Registration Closed'}
+            myRegistrations.length > 0 ? (
+              <div className="registrations-container">
+                <div className="registrations-count">
+                  You have <strong>{myRegistrations.length}</strong> confirmed registration{myRegistrations.length !== 1 ? 's' : ''}
+                </div>
+                
+                <div className="registrations-grid">
+                  {myRegistrations.map(ride => (
+                    <div key={ride.id} className="registration-card">
+                      <div className="card-header">
+                        <h3 className="ride-title">{ride.title}</h3>
+                        <span className={`status-badge status-${ride.status}`}>
+                          {ride.status === 'active' ? '🟢 Active' : '🔴 Closed'}
                         </span>
                       </div>
-                    </div>
 
-                    <div className="card-footer">
-                      <button 
-                        className="btn-cancel"
-                        onClick={() => handleCancelClick(ride)}
-                        disabled={cancellingId === ride.id}
-                      >
-                        {cancellingId === ride.id ? '⏳ Cancelling...' : '❌ Cancel Registration'}
-                      </button>
+                      <div className="card-body">
+                        <div className="info-row">
+                          <span className="label">📍 Location:</span>
+                          <span className="value">{ride.location}</span>
+                        </div>
+
+                        <div className="info-row">
+                          <span className="label">📅 Date:</span>
+                          <span className="value">{formatDate(ride.date)}</span>
+                        </div>
+
+                        <div className="info-row">
+                          <span className="label">🏢 Organizer:</span>
+                          <span className="value">{ride.organizer}</span>
+                        </div>
+
+                        <div className="info-row">
+                          <span className="label">💰 Price:</span>
+                          <span className="value price">NPR {ride.price}</span>
+                        </div>
+
+                        <div className="info-row">
+                          <span className="label">👥 Participants:</span>
+                          <span className="value">{ride.registrations} / {ride.totalSeats}</span>
+                        </div>
+
+                        <div className="info-row">
+                          <span className="label">📊 Status:</span>
+                          <span className="value status-text">
+                            {ride.status === 'active' ? '✅ Registration Open' : '🔒 Registration Closed'}
+                          </span>
+                        </div>
+                      </div>
+
+                      <div className="card-footer">
+                        <button 
+                          className="btn-cancel"
+                          onClick={() => handleCancelClick(ride)}
+                          disabled={cancellingId === ride.id}
+                        >
+                          {cancellingId === ride.id ? '⏳ Cancelling...' : '❌ Cancel Registration'}
+                        </button>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
-          )}
+            ) : (
+              <div className="empty-state">
+                <div className="empty-icon">🏍️</div>
+                <h2>No Confirmed Registrations Yet</h2>
+                <p>You haven't registered for any rides yet. Browse available rides and register to join the adventure!</p>
+                <a href="/" className="btn-browse">Browse Rides</a>
+              </div>
+            )
           ) : (
             <div className="profile-container">
               <div className="profile-card">

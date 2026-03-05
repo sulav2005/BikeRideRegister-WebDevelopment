@@ -3,10 +3,13 @@ import Navbar from '../components/Navbar';
 import RideListingCard from '../components/RideListingCard';
 import RegistrationModal from '../components/RegistrationModal';
 import { useRide } from '../context/RideContext';
+import { useRole } from '../context/RoleContext';
 import './Home.css';
 
 const Home = () => {
   const { rides, registerRider } = useRide();
+  const { currentUser } = useRole();
+  const isRider = currentUser?.role === 'rider';
   const [selectedOrganizer, setSelectedOrganizer] = useState('All');
   const [showModal, setShowModal] = useState(false);
   const [selectedRide, setSelectedRide] = useState(null);
@@ -53,13 +56,15 @@ const Home = () => {
     <div>
       <Navbar />
       <div className="home">
-        {/* Hero Section */}
-        <section className="hero">
-          <div className="hero-content">
-            <h1>Join Organized Rides Across Nepal</h1>
-            <p>Experience the thrill of biking through Nepal's most scenic routes</p>
-          </div>
-        </section>
+        {/* Hero Section (hidden for logged-in riders) */}
+        {!isRider && (
+          <section className="hero">
+            <div className="hero-content">
+              <h1>Join Organized Rides Across Nepal</h1>
+              <p>Experience the thrill of biking through Nepal's most scenic routes</p>
+            </div>
+          </section>
+        )}
 
         {/* Upcoming Rides This Month Section */}
         <section className="upcoming-rides-section">
