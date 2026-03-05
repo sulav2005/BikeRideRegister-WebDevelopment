@@ -12,6 +12,7 @@ const MyRegistrations = () => {
   const [cancellingId, setCancellingId] = useState(null);
   const [showConfirmModal, setShowConfirmModal] = useState(false);
   const [selectedRideToCancel, setSelectedRideToCancel] = useState(null);
+  const [activeTab, setActiveTab] = useState('registrations');
 
   // Filter rides where current user is registered
   const myRegistrations = rides.filter(ride => 
@@ -50,9 +51,23 @@ const MyRegistrations = () => {
           <div className="confirmed-header">
             <h1>✅ Confirmed Registrations</h1>
             <p className="subtitle">Your registered bike tours and rides</p>
+            <div className="header-tabs">
+              <button 
+                className={`tab-btn ${activeTab === 'registrations' ? 'active' : ''}`}
+                onClick={() => setActiveTab('registrations')}
+              >
+                My Registrations
+              </button>
+              <button 
+                className={`tab-btn ${activeTab === 'profile' ? 'active' : ''}`}
+                onClick={() => setActiveTab('profile')}
+              >
+                My Profile
+              </button>
+            </div>
           </div>
 
-          {myRegistrations.length === 0 ? (
+          {activeTab === 'registrations' ? (
             <div className="empty-state">
               <div className="empty-icon">🏍️</div>
               <h2>No Confirmed Registrations Yet</h2>
@@ -120,6 +135,31 @@ const MyRegistrations = () => {
                     </div>
                   </div>
                 ))}
+              </div>
+            </div>
+          )}
+          ) : (
+            <div className="profile-container">
+              <div className="profile-card">
+                <h2>My Profile</h2>
+                <div className="profile-info">
+                  <div className="profile-item">
+                    <span className="label">Email:</span>
+                    <span className="value">{currentUser?.email}</span>
+                  </div>
+                  <div className="profile-item">
+                    <span className="label">Role:</span>
+                    <span className="value role-badge">{currentUser?.role.toUpperCase()}</span>
+                  </div>
+                  <div className="profile-item">
+                    <span className="label">Member Since:</span>
+                    <span className="value">{new Date(currentUser?.loginTime).toLocaleDateString()}</span>
+                  </div>
+                  <div className="profile-item">
+                    <span className="label">Total Registrations:</span>
+                    <span className="value">{myRegistrations.length}</span>
+                  </div>
+                </div>
               </div>
             </div>
           )}

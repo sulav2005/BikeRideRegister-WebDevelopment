@@ -99,7 +99,13 @@ const OrganizerDashboard = () => {
           className={`tab-btn ${activeTab === 'rides' ? 'active' : ''}`}
           onClick={() => setActiveTab('rides')}
         >
-          My Rides ({organizerRides.length})
+          Manage Rides
+        </button>
+        <button 
+          className={`tab-btn ${activeTab === 'profile' ? 'active' : ''}`}
+          onClick={() => setActiveTab('profile')}
+        >
+          Profile
         </button>
         {pendingRides.length > 0 && (
           <button 
@@ -162,6 +168,38 @@ const OrganizerDashboard = () => {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        )}
+
+        {activeTab === 'profile' && (
+          <div className="content-section profile-section">
+            <h2>My Profile</h2>
+            <div className="profile-card">
+              <div className="profile-item">
+                <span className="label">Organizer Name:</span>
+                <span className="value">{currentUser.organizerName}</span>
+              </div>
+              <div className="profile-item">
+                <span className="label">Email:</span>
+                <span className="value">{currentUser.email}</span>
+              </div>
+              <div className="profile-item">
+                <span className="label">Role:</span>
+                <span className="value">{currentUser.role.toUpperCase()}</span>
+              </div>
+              <div className="profile-item">
+                <span className="label">Total Rides Created:</span>
+                <span className="value">{organizerRides.length}</span>
+              </div>
+              <div className="profile-item">
+                <span className="label">Approved Rides:</span>
+                <span className="value">{approvedRides.length}</span>
+              </div>
+              <div className="profile-item">
+                <span className="label">Login Time:</span>
+                <span className="value">{new Date(currentUser.loginTime).toLocaleString()}</span>
+              </div>
             </div>
           </div>
         )}

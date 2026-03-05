@@ -102,10 +102,10 @@ const AdminDashboard = () => {
             👥 Users
           </button>
           <button
-            className={`menu-item ${activeTab === 'settings' ? 'active' : ''}`}
-            onClick={() => setActiveTab('settings')}
+            className={`menu-item ${activeTab === 'profile' ? 'active' : ''}`}
+            onClick={() => setActiveTab('profile')}
           >
-            ⚙️ Settings
+            👤 Profile
           </button>
         </nav>
 
@@ -339,11 +339,11 @@ const AdminDashboard = () => {
             </div>
           )}
 
-          {/* Settings Tab */}
-          {activeTab === 'settings' && (
-            <div className="tab-content settings-tab">
-              <h2>System Settings</h2>
-              <div className="settings-section">
+          {/* Profile Tab */}
+          {activeTab === 'profile' && (
+            <div className="tab-content profile-tab">
+              <h2>Admin Profile</h2>
+              <div className="profile-section">
                 <h3>Admin Account</h3>
                 <div className="setting-item">
                   <span>Email:</span>
