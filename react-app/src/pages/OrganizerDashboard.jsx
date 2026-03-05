@@ -4,10 +4,14 @@ import { useRole } from '../context/RoleContext';
 import { useRide } from '../context/RideContext';
 import OrganizerRideForm from '../components/OrganizerRideForm';
 import RideTable from '../components/RideTable';
+import RegisteredRidersModal from '../components/RegisteredRidersModal';
+import RideEditModal from '../components/RideEditModal';
 import './OrganizerDashboard.css';
 
 const OrganizerDashboard = () => {
   const [activeTab, setActiveTab] = useState('rides');
+  const [editingRide, setEditingRide] = useState(null);
+  const [viewingRidersRide, setViewingRidersRide] = useState(null);
   const { currentUser, logout } = useRole();
   const { rides } = useRide();
   const navigate = useNavigate();
@@ -15,6 +19,22 @@ const OrganizerDashboard = () => {
   const handleLogout = () => {
     logout();
     navigate('/');
+  };
+
+  const handleEditRide = (ride) => {
+    setEditingRide(ride);
+  };
+
+  const handleViewRiders = (ride) => {
+    setViewingRidersRide(ride);
+  };
+
+  const handleCloseEditModal = () => {
+    setEditingRide(null);
+  };
+
+  const handleCloseRidersModal = () => {
+    setViewingRidersRide(null);
   };
 
   // Filter rides for this organizer
@@ -110,7 +130,12 @@ const OrganizerDashboard = () => {
                 </button>
               </div>
             ) : (
-              <RideTable organizerName={currentUser.organizerName} isApprovedOnly={true} />
+              <RideTable 
+                organizerName={currentUser.organizerName} 
+                isApprovedOnly={true}
+                onEdit={handleEditRide}
+                onViewRiders={handleViewRiders}
+              />
             )}
           </div>
         )}
@@ -141,6 +166,21 @@ const OrganizerDashboard = () => {
           </div>
         )}
       </div>
+
+      {/* Modals */}
+      {editingRide && (
+        <RideEditModal 
+          ride={editingRide} 
+          onClose={handleCloseEditModal}
+        />
+      )}
+
+      {viewingRidersRide && (
+        <RegisteredRidersModal 
+          ride={viewingRidersRide}
+          onClose={handleCloseRidersModal}
+        />
+      )}
     </div>
   );
 };

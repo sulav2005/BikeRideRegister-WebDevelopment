@@ -1,0 +1,27 @@
+/* simple table styling for debug output */
+.data-page {
+  padding: 2rem;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+}
+
+.data-table th,
+.data-table td {
+  padding: 0.5rem;
+  border: 1px solid #000;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.data-table th {
+  background-color: #f0f0f0;
+}
+
+.error {
+  color: red;
+  margin-bottom: 1rem;
+}

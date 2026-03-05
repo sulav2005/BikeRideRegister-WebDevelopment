@@ -5,7 +5,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #ff6b6b 0%, #ffa94d 100%);
+  background: #F3F4F6;
   padding: 2rem 1rem;
 }
 
@@ -14,9 +14,9 @@
   width: 100%;
   padding: 3rem 2.5rem;
   border: none;
-  border-radius: 16px;
-  background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  background: #FFFFFF;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   animation: slideInUp 0.5s ease-out;
 }
 
@@ -37,14 +37,14 @@
 }
 
 .organizer-login-header h1 {
-  color: #1a1a2e;
+  color: #111827;
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
 }
 
 .organizer-login-header p {
-  color: #666;
+  color: #6B7280;
   font-size: 1rem;
   margin: 0;
 }
@@ -95,9 +95,9 @@
   height: 100%;
   padding: 0.75rem 1rem;
   border: 2px solid #e0e0e0;
-  border-radius: 10px;
+  border-radius: 8px;
   font-size: 1rem;
-  color: #333;
+  color: #111827;
   background-color: #fff;
   outline: none;
   transition: all 0.3s ease;
@@ -108,8 +108,8 @@
 
 .floating-group input:focus,
 .floating-group input:not(:placeholder-shown) {
-  border-color: #ff6b6b;
-  box-shadow: 0 0 0 4px rgba(255, 107, 107, 0.1);
+  border-color: #6B7280;
+  box-shadow: 0 0 0 3px rgba(107, 114, 128, 0.1);
 }
 
 .floating-group label {
@@ -118,7 +118,7 @@
   top: 0.75rem;
   padding: 0 0.25rem;
   background-color: white;
-  color: #999;
+  color: #6B7280;
   font-size: 1rem;
   font-weight: 500;
   pointer-events: none;
@@ -129,7 +129,7 @@
 .floating-group input:not(:placeholder-shown) ~ label {
   top: -0.75rem;
   font-size: 0.85rem;
-  color: #ff6b6b;
+  color: #374151;
   font-weight: 600;
 }
 
@@ -173,27 +173,21 @@
 
 .organizer-submit-btn {
   padding: 0.75rem 1.5rem;
-  background: linear-gradient(135deg, #ff6b6b 0%, #ffa94d 100%);
+  background-color: #374151;
   color: white;
   border: none;
-  border-radius: 10px;
+  border-radius: 0.25rem;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease;
   margin-top: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
 }
 
 .organizer-submit-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
-}
-
-.organizer-submit-btn:active {
-  transform: translateY(0);
+  background-color: #4B5563;
 }
 
 .organizer-login-footer {

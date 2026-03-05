@@ -9,6 +9,7 @@ import AdminLogin from './pages/AdminLogin';
 import AdminDashboard from './pages/AdminDashboard';
 import OrganizerLogin from './pages/OrganizerLogin';
 import OrganizerDashboard from './pages/OrganizerDashboard';
+import DataPage from './pages/DataPage';
 import AdminProtectedRoute from './components/AdminProtectedRoute';
 import OrganizerProtectedRoute from './components/OrganizerProtectedRoute';
 import RiderProtectedRoute from './components/RiderProtectedRoute';
@@ -60,6 +61,8 @@ function App() {
                 </OrganizerProtectedRoute>
               } 
             />
+            {/* data debug page */}
+            <Route path="/data" element={<DataPage />} />
           </Routes>
         </Router>
         </div>

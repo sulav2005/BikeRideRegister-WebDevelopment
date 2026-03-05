@@ -359,18 +359,6 @@ const AdminDashboard = () => {
                 </div>
               </div>
 
-              <div className="settings-section">
-                <h3>Application Settings</h3>
-                <button className="settings-btn">
-                  🔧 Configure Features
-                </button>
-                <button className="settings-btn">
-                  📧 Email Templates
-                </button>
-                <button className="settings-btn">
-                  🔐 Security Settings
-                </button>
-              </div>
             </div>
           )}
         </div>

@@ -25,6 +25,28 @@ app.get('/api/rides', async (req, res) => {
   }
 });
 
+// fetch all users from users table
+app.get('/api/users', async (req, res) => {
+  try {
+    const result = await pool.query('SELECT * FROM users');
+    res.json(result.rows);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Database error' });
+  }
+});
+
+// fetch all registrations
+app.get('/api/registrations', async (req, res) => {
+  try {
+    const result = await pool.query('SELECT * FROM registrations');
+    res.json(result.rows);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Database error' });
+  }
+});
+
 // start server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {

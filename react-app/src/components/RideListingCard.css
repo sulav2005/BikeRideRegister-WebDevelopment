@@ -1,40 +1,36 @@
 /* RideListingCard Styling */
 
 .ride-card {
-  background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  background-color: white;
+  border: 2px solid #000;
   overflow: hidden;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   flex-direction: column;
   height: 100%;
-  border: 2px solid #f0f0f5;
 }
 
 .ride-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+  /* No hover effects for minimalist design */
 }
 
 .ride-card.urgent {
-  border-color: #ff6b6b;
-  background: linear-gradient(135deg, #fff5f5 0%, #ffe0e0 100%);
+  border-color: #000;
+  background-color: white;
 }
 
 .ride-card.urgent:hover {
-  box-shadow: 0 12px 28px rgba(255, 107, 107, 0.25);
+  /* No hover effects for minimalist design */
 }
 
 .ride-card-header {
-  padding: 1.5rem;
-  border-bottom: 2px solid #f0f0f5;
-  background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+  padding: 1rem;
+  border-bottom: 2px solid #000;
+  background-color: white;
 }
 
 .ride-card.urgent .ride-card-header {
-  background: linear-gradient(135deg, #ffe0e0 0%, #fff5f5 100%);
-  border-bottom-color: #ffb3b3;
+  background-color: white;
+  border-bottom-color: #000;
 }
 
 .ride-header-top {
@@ -63,37 +59,30 @@
 }
 
 .urgent-badge {
-  background: linear-gradient(135deg, #ff6b6b 0%, #ff5252 100%);
+  background-color: #000;
   color: white;
-  padding: 0.35rem 0.75rem;
-  border-radius: 6px;
+  padding: 0.25rem 0.5rem;
   font-size: 0.7rem;
   font-weight: 700;
   white-space: nowrap;
-  box-shadow: 0 2px 8px rgba(255, 107, 107, 0.3);
-  animation: pulse 2s infinite;
 }
 
 .free-badge {
-  background: linear-gradient(135deg, #00c864 0%, #00e87f 100%);
+  background-color: #000;
   color: white;
-  padding: 0.35rem 0.75rem;
-  border-radius: 6px;
+  padding: 0.25rem 0.5rem;
   font-size: 0.7rem;
   font-weight: 700;
   white-space: nowrap;
-  box-shadow: 0 2px 8px rgba(0, 200, 100, 0.3);
 }
 
 .all-bikes-badge {
-  background: linear-gradient(135deg, #6c63ff 0%, #5a4fbf 100%);
+  background-color: #000;
   color: white;
-  padding: 0.35rem 0.75rem;
-  border-radius: 6px;
+  padding: 0.25rem 0.5rem;
   font-size: 0.7rem;
   font-weight: 700;
   white-space: nowrap;
-  box-shadow: 0 2px 8px rgba(108, 99, 255, 0.3);
 }
 
 @keyframes pulse {
@@ -105,9 +94,9 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  background-color: rgba(0, 123, 255, 0.1);
+  background-color: white;
   padding: 0.5rem 1rem;
-  border-radius: 8px;
+  border: 1px solid #000;
   width: fit-content;
 }
 
@@ -116,7 +105,7 @@
 }
 
 .organizer-name {
-  color: #0056b3;
+  color: #000;
   font-weight: 600;
   font-size: 0.9rem;
 }
@@ -135,21 +124,20 @@
   align-items: center;
   gap: 1rem;
   padding: 0.75rem;
-  background-color: rgba(0, 123, 255, 0.03);
-  border-radius: 8px;
-  transition: all 0.2s ease;
+  background-color: white;
+  border: 1px solid #000;
 }
 
 .ride-card.urgent .ride-info-row {
-  background-color: rgba(255, 107, 107, 0.05);
+  background-color: white;
 }
 
 .ride-info-row:hover {
-  background-color: rgba(0, 123, 255, 0.08);
+  background-color: white;
 }
 
 .ride-card.urgent .ride-info-row:hover {
-  background-color: rgba(255, 107, 107, 0.1);
+  background-color: white;
 }
 
 .ride-info-label {
@@ -168,13 +156,13 @@
 }
 
 .price-row {
-  background: linear-gradient(135deg, rgba(0, 200, 100, 0.08) 0%, rgba(0, 150, 80, 0.04) 100%);
-  border: 1px solid rgba(0, 200, 100, 0.15);
+  background-color: white;
+  border: 2px solid #000;
 }
 
 .price-row.free {
-  background: linear-gradient(135deg, rgba(0, 200, 100, 0.15) 0%, rgba(0, 150, 80, 0.08) 100%);
-  border: 2px solid rgba(0, 200, 100, 0.3);
+  background-color: white;
+  border: 2px solid #000;
 }
 
 .ride-price {
@@ -194,9 +182,8 @@
 .seats-section {
   margin-top: 0.5rem;
   padding: 1rem;
-  background: linear-gradient(135deg, rgba(100, 150, 255, 0.08) 0%, rgba(80, 120, 255, 0.04) 100%);
-  border-radius: 8px;
-  border: 1px solid rgba(100, 150, 255, 0.15);
+  background-color: white;
+  border: 1px solid #000;
 }
 
 .seats-info {
@@ -213,90 +200,87 @@
 }
 
 .seats-count {
-  color: #0056b3;
+  color: #000;
   font-weight: 700;
   font-size: 1rem;
-  background-color: rgba(0, 123, 255, 0.1);
-  padding: 0.35rem 0.75rem;
-  border-radius: 6px;
+  background-color: white;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid #000;
 }
 
 .seats-bar {
   width: 100%;
   height: 8px;
-  background-color: rgba(0, 123, 255, 0.15);
-  border-radius: 10px;
+  background-color: #ccc;
+  border: 1px solid #000;
   overflow: hidden;
 }
 
 .seats-filled {
   height: 100%;
-  border-radius: 10px;
   transition: width 0.3s ease;
 }
 
 .seats-filled.good {
-  background: linear-gradient(90deg, #00c864 0%, #00e87f 100%);
+  background-color: #000;
 }
 
 .seats-filled.warning {
-  background: linear-gradient(90deg, #ffb800 0%, #ffc837 100%);
+  background-color: #666;
 }
 
 .seats-filled.critical {
-  background: linear-gradient(90deg, #ff6b6b 0%, #ff5252 100%);
+  background-color: #333;
 }
 
 .ride-card-footer {
-  padding: 1.5rem;
-  border-top: 2px solid #f0f0f5;
-  background-color: rgba(0, 123, 255, 0.02);
+  padding: 1rem;
+  border-top: 2px solid #000;
+  background-color: white;
 }
 
 .ride-card.urgent .ride-card-footer {
-  border-top-color: #ffb3b3;
-  background-color: rgba(255, 107, 107, 0.02);
+  border-top-color: #000;
+  background-color: white;
 }
 
 .register-btn {
   width: 100%;
-  padding: 0.85rem 1.5rem;
-  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+  padding: 0.75rem 1rem;
+  background-color: #000;
   color: white;
-  border: none;
-  border-radius: 8px;
+  border: 2px solid #000;
   font-size: 0.95rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
 }
 
 .ride-card.urgent .register-btn {
-  background: linear-gradient(135deg, #ff6b6b 0%, #ff5252 100%);
-  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+  background-color: #000;
 }
 
 .register-btn:hover:not(.disabled) {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.4);
+  background-color: white;
+  color: #000;
 }
 
 .ride-card.urgent .register-btn:hover:not(.disabled) {
-  box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4);
+  background-color: white;
+  color: #000;
 }
 
 .register-btn:active:not(.disabled) {
-  transform: translateY(0);
-  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.2);
+  background-color: #333;
+  color: white;
 }
 
 .register-btn.disabled {
-  background: linear-gradient(135deg, #ccc 0%, #999 100%);
+  background-color: #ccc;
+  color: #666;
   cursor: not-allowed;
-  opacity: 0.6;
+  border-color: #ccc;
 }
 
 /* Responsive Grid */
@@ -336,13 +320,13 @@
   }
 
   .ride-card {
-    border-radius: 10px;
+    /* No border-radius for minimalist design */
   }
 
   .ride-card-header,
   .ride-card-body,
   .ride-card-footer {
-    padding: 1.25rem;
+    padding: 1rem;
   }
 
   .ride-title {
