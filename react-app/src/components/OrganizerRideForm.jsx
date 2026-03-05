@@ -16,8 +16,10 @@ const OrganizerRideForm = ({ organizerName, onRideCreated }) => {
     price: '',
     totalSeats: '',
     bikeType: 'All',
-    description: ''
+    description: '',
+    photo: null
   });
+  const [photoPreview, setPhotoPreview] = useState('');
   const [errors, setErrors] = useState({});
 
   const bikeTypes = ['All', 'Mountain Bike', 'Road Bike', 'Adventure Bike', 'Hybrid Bike', 'Electric Bike'];
@@ -58,6 +60,39 @@ const OrganizerRideForm = ({ organizerName, onRideCreated }) => {
     }
   };
 
+  const handlePhotoChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      if (!file.type.startsWith('image/')) {
+        setErrors(prev => ({ ...prev, photo: 'Please select an image file' }));
+        return;
+      }
+      if (file.size > 5 * 1024 * 1024) {
+        setErrors(prev => ({ ...prev, photo: 'Image size must be less than 5MB' }));
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        setFormData(prev => ({
+          ...prev,
+          photo: event.target.result
+        }));
+        setPhotoPreview(event.target.result);
+        setErrors(prev => ({ ...prev, photo: '' }));
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const handleRemovePhoto = () => {
+    setFormData(prev => ({
+      ...prev,
+      photo: null
+    }));
+    setPhotoPreview('');
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -79,6 +114,7 @@ const OrganizerRideForm = ({ organizerName, onRideCreated }) => {
         availableSeats: parseInt(formData.totalSeats),
         bikeType: formData.bikeType,
         description: formData.description,
+        photo: formData.photo,
         organizer: organizerName
       });
 
@@ -93,8 +129,10 @@ const OrganizerRideForm = ({ organizerName, onRideCreated }) => {
         price: '',
         totalSeats: '',
         bikeType: 'All',
-        description: ''
+        description: '',
+        photo: null
       });
+      setPhotoPreview('');
       setErrors({});
       setShowForm(false);
 
@@ -182,6 +220,32 @@ const OrganizerRideForm = ({ organizerName, onRideCreated }) => {
                 placeholder="Describe the ride experience..."
                 rows="3"
               />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="photo">Ride Display picture</label>
+              <div className="photo-upload-container">
+                <input
+                  id="photo"
+                  type="file"
+                  accept="image/*"
+                  onChange={handlePhotoChange}
+                  className="photo-input"
+                />
+                {errors.photo && <span className="error-message">{errors.photo}</span>}
+              </div>
+              {photoPreview && (
+                <div className="photo-preview">
+                  <img src={photoPreview} alt="Ride preview" className="preview-image" />
+                  <button
+                    type="button"
+                    className="btn-remove-photo"
+                    onClick={handleRemovePhoto}
+                  >
+                    Remove Photo
+                  </button>
+                </div>
+              )}
             </div>
           </div>
 

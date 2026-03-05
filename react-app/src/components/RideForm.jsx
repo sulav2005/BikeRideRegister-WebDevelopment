@@ -11,8 +11,10 @@ const RideForm = ({ ride = null, onClose, organizerName }) => {
     date: '',
     price: '',
     totalSeats: '',
-    description: ''
+    description: '',
+    photo: null
   });
+  const [photoPreview, setPhotoPreview] = useState(null);
   const [errors, setErrors] = useState({});
 
   useEffect(() => {
@@ -23,8 +25,12 @@ const RideForm = ({ ride = null, onClose, organizerName }) => {
         date: ride.date,
         price: ride.price,
         totalSeats: ride.totalSeats,
-        description: ride.description || ''
+        description: ride.description || '',
+        photo: ride.photo || null
       });
+      if (ride.photo) {
+        setPhotoPreview(ride.photo);
+      }
     }
   }, [ride]);
 
@@ -52,6 +58,39 @@ const RideForm = ({ ride = null, onClose, organizerName }) => {
         [name]: ''
       }));
     }
+  };
+
+  const handlePhotoChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      if (!file.type.startsWith('image/')) {
+        setErrors(prev => ({ ...prev, photo: 'Please select an image file' }));
+        return;
+      }
+      if (file.size > 5 * 1024 * 1024) {
+        setErrors(prev => ({ ...prev, photo: 'Image size must be less than 5MB' }));
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        setFormData(prev => ({
+          ...prev,
+          photo: event.target.result
+        }));
+        setPhotoPreview(event.target.result);
+        setErrors(prev => ({ ...prev, photo: '' }));
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const handleRemovePhoto = () => {
+    setFormData(prev => ({
+      ...prev,
+      photo: null
+    }));
+    setPhotoPreview(null);
   };
 
   const handleSubmit = (e) => {
@@ -175,6 +214,32 @@ const RideForm = ({ ride = null, onClose, organizerName }) => {
               placeholder="Describe the ride experience..."
               rows="4"
             />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="photo">Ride Display picture</label>
+            <div className="photo-upload-container">
+              <input
+                id="photo"
+                type="file"
+                accept="image/*"
+                onChange={handlePhotoChange}
+                className="photo-input"
+              />
+              {errors.photo && <span className="error-message">{errors.photo}</span>}
+            </div>
+            {photoPreview && (
+              <div className="photo-preview">
+                <img src={photoPreview} alt="Ride preview" className="preview-image" />
+                <button
+                  type="button"
+                  className="btn-remove-photo"
+                  onClick={handleRemovePhoto}
+                >
+                  Remove Photo
+                </button>
+              </div>
+            )}
           </div>
 
           <div className="form-actions">
